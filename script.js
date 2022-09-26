@@ -99,4 +99,22 @@ Object.entries(simpleObject).forEach((value) => {
   // console.log(`${value[0]}: ${value[1]}`);
 });
 
+let salaries = {
+  John: 100,
+  Pete: 300,
+  Mary: 250,
+};
 
+function topSalary(salary) {
+  let entries = Object.entries(salary);
+  if (entries.length > 0) {
+    entries.sort((a, b) => {
+      console.log(a[1], b[1])
+      return a[1] - b[1]
+    })
+    return entries.reverse()[0][0];
+  } else {
+    return null;
+  }
+}
+console.log(topSalary(salaries));
