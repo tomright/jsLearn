@@ -46,7 +46,10 @@ const functionExpression = function () {
   return "Hello, i'm function expression";
 };
 functionExpression();
-function functionDeclorationWithCallBack(callb, otherArg = "Other Arg") {
+function functionDeclorationWithCallBack(
+  callb,
+  otherArg = "Other Arg"
+) {
   return [otherArg, callb()];
 }
 function callback() {
@@ -77,7 +80,9 @@ function randomWhile(stopNumber, maxNumberForRandom = 100) {
   let countIteration = 0;
   while (stopNumber != random) {
     random = getRandomNumber(0, maxNumberForRandom);
-    console.log(`Цикл не прервался, текущее случайное число: ${random}`);
+    console.log(
+      `Цикл не прервался, текущее случайное число: ${random}`
+    );
     countIteration++;
   }
   console.log(`ЦИКЛ ПРЕРВАЛСЯ`);
@@ -109,12 +114,17 @@ function topSalary(salary) {
   let entries = Object.entries(salary);
   if (entries.length > 0) {
     entries.sort((a, b) => {
-      console.log(a[1], b[1])
-      return a[1] - b[1]
-    })
+      console.log(a[1], b[1]);
+      return a[1] - b[1];
+    });
     return entries.reverse()[0][0];
   } else {
     return null;
   }
 }
 console.log(topSalary(salaries));
+
+const number = [1, 2, 3, 4, 5, 6];
+
+let sum = number.reduce((num1, num2) => num1 - num2);
+console.log(sum);
